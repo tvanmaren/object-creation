@@ -60,10 +60,12 @@ function Husky() {
   Dog.call(this); // call super constructor.
 }
 
-// TODO: Use Object.create() in order to extend the superclass with the subclass
-//write code here
 
-var fido = Object.create(Husky);
+// TODO: Use Object.create() in order to extend the superclass with the subclass
+Husky.prototype=Object.create(Dog.prototype);
+
+var fido = new Husky();
+
 
 console.log('Is fido an instance of Husky?', fido instanceof Husky);// should print true
 console.log('Is fido an instance of Dog?', fido instanceof Dog);// should print true
