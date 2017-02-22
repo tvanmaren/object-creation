@@ -28,8 +28,12 @@ let languages = {
 
 //Write task #1 code below
 
+const moreLanguages = Object.assign(  {
+    isolates: ["Korean", "Basque"],
+    Germanic: ["Swedish", "Danish", "English"]
+  }, languages);
 
-
+console.log(moreLanguages);
 
 /*
 Task #2
@@ -59,7 +63,7 @@ function Husky() {
 // TODO: Use Object.create() in order to extend the superclass with the subclass
 //write code here
 
-var fido = new Husky();
+var fido = Object.create(Husky);
 
 console.log('Is fido an instance of Husky?', fido instanceof Husky);// should print true
 console.log('Is fido an instance of Dog?', fido instanceof Dog);// should print true
