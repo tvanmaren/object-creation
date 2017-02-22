@@ -32,6 +32,34 @@ let languages = {
 
 
 /*
-
-
+Task #2
+- Using Object.create(), create a "Husky" constructor with the explicit prototype "Dog".
+- You only need to write ONE line of code -- see TODO below
 */
+
+// Dog - superclass
+function Dog() {
+  this.hungry = true;
+}
+
+// superclass method
+Dog.prototype.eat = function() {
+  this.hungry = false;
+};
+
+Dog.prototype.run = function() {
+  this.hungry = true;
+};
+
+// Husky - subclass
+function Husky() {
+  Dog.call(this); // call super constructor.
+}
+
+// TODO: Use Object.create() in order to extend the superclass with the subclass
+//write code here
+
+var fido = new Husky();
+
+console.log('Is fido an instance of Husky?', fido instanceof Husky);// should print true
+console.log('Is fido an instance of Dog?', fido instanceof Dog);// should print true
